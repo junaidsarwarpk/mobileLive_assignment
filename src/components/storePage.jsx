@@ -31,7 +31,7 @@ class StorePage extends Component{
                     <Basket type="CART" items={this.props.items} onDelete={this.onDelete} UpdateItem={this.UpdateItem} />
                 </div>
             </div>
-            <div className="row">
+            <div className="row form-group">
                 <div className="col-4 offset-2">
                     <button className="btn btn-primary form-control" onClick={this.updateItems(false)}> Add All to Store </button>
                 </div>
@@ -41,7 +41,14 @@ class StorePage extends Component{
 
             </div>
             
-            
+            <div className="row form-group">
+            <p>
+                <label>
+                    *Please note that default items cannot be removed from the list (just for the sake of presentation).
+                    Newly added items can be removed though.
+                </label>
+            </p>
+            </div>
         </React.Fragment>
     }
 
