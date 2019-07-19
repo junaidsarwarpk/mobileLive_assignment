@@ -12,6 +12,7 @@ const AddItem = ({ onSubmit, initialVal, DoAddItem }) => {
     const onAddItem = (e) => {
 
         e.preventDefault();
+        if(!item || void 0 === item) return;
         let obj = { id: Math.ceil( Math.random() * 1000000 ), text: item, isActive: false };
         DoAddItem(obj);
         setitem("");
