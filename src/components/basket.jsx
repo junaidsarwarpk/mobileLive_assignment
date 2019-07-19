@@ -31,11 +31,9 @@ const SingleBasket = ({ type, items, onDelete, UpdateItem }) => {
     const getTitle = () => BASKET_TYPES_TITLES[type] || "Untitled"
 
     const getCollection = items => items.map(_i => {
-        if(type === BASKET_TYPES_TITLES.STORE && !_i.isActive){
-            return getLayout(_i)
-        }else if(type === BASKET_TYPES_TITLES.CART && _i.isActive){
-            return getLayout(_i)
-        }
+
+        return (type === BASKET_TYPES_TITLES.STORE && !_i.isActive) ? getLayout(_i) : (type === BASKET_TYPES_TITLES.CART && _i.isActive) ? getLayout(_i) : null;
+       
     })
 
    return <div className="card">
